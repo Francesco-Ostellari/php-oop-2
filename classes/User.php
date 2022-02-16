@@ -12,10 +12,12 @@
                 protected $card;
                 protected $fasciaUtente;
 
-                public function __construct($name, $lastName, $address, $phoneNumber, $card) {
+                public function __construct($name, $lastName, $address, $phoneNumber, $mail, $card) {
                         $this->name = $name;
+                        $this -> lastName = $lastName;
                         $this->address = $address;
                         $this->phoneNumber = $phoneNumber;
+                        $this->mail = $mail;
                         $this->setCard($card);
                 }
 

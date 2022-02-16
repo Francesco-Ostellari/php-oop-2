@@ -1,4 +1,5 @@
 <?php
+  require_once __DIR__ ."/../traits/FasciaUtente.php";
   class Product 
   {
     protected $name;
@@ -40,8 +41,11 @@
     /**
      * Get the value of price
      */ 
-    public function getPrice()
+    public function getPrice($fasciaUtente, $sconto)
     {
+      if ($fasciaUtente) {
+        $this->price = $this->price * ((100 - $sconto) / 100);
+      } 
       return $this->price;
     }
 
@@ -52,12 +56,8 @@
      */ 
     
 
-    public function setPrice(float $price)
+    public function setPrice($price)
     {
-      if($price < 10) {
-        throw new Exception ("Il prezzo non è corretto");
-      } 
-      
       $this->price = $price;
 
       return $this;

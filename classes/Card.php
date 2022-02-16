@@ -10,6 +10,7 @@
       public function __construct($name, $lastName, $number, $cvv, $date) {
         $this->name = $name;
         $this->lastName = $lastName;
+        $this->number = $number;
         $this->cvv = $cvv;
         $this->date = $date;
       }
